@@ -1,0 +1,200 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{xcolor,graphicx}
+\usepackage{chemfig}
+\pagestyle{headings}
+\setlength{\parindent}{0pt}
+\usepackage{gensymb}
+
+\begin{document}
+
+\begin{align}
+\textrm{\LaTeX : document à reproduire}\nonumber
+\end{align}
+\begin{align}
+\textrm{Enzo Silbermann}\nonumber
+\end{align}
+\begin{align}
+\textrm{9 octobre 2018}\nonumber
+\end{align}
+\begin{align}
+\textbf{Résumé}\nonumber\\
+\nonumber\end{align}
+
+\textrm{Je donne dans ce document des exemples (aléatoires) de ce que j'ai vu en cours lors de mes années perdues de Licence :}
+\begin{flushleft}
+\begin{enumerate}
+\item[1]. des définitions  en mathématiques,\\
+\item[2]. des données et des programmes en informatique,\\
+\item[3]. des réactions chimiques,\\
+\item[4]. des formules physiques...\\
+\end{enumerate}
+\end{flushleft}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\textit{TABLE DES MATIÈRES}\\
+\\
+\section{Mathématiques}
+
+\subsection{Analyse}
+\begin{center}
+Dans tout ce chapitre f désigne une fonction dans $\mathbb{R}$ dans $\mathbb{R}$.\\
+La notation $\overline{\mathbb{R}}$ désigne l'ensemble $\mathbb{R}\cup \left\lbrace + \infty \right\rbrace \cup \left\lbrace - \infty \right\rbrace .$\\
+\end{center}
+On dit que $f$ a pour \textit{limite l en $x_0$} (ou que $f(x)$ a pour \textit{limite l} quand \textit{$x$ tend vers $x_0$}, ou encore que \textit{$f(x)$ tend vers l} quand \textit{$x$ tend vers $x_0$}) si$f(x)$ peut être rendu aussi voisin qu'on veut de l, à condition de prendre $x$ assez voisin de $x_0$.\\
+\begin{center}
+Notations : $l = \underset{x_0}{\lim}f = \underset{x \to x_0}{\lim}f(x)$, ou $f \underset{x_0}{\rightarrow}l$ ou encore $f(x) \underset{x \rightarrow x_0}{\rightarrow} l$.
+\end{center}
+
+\subsection{Algèbre}
+
+\subsubsection{Ensemble de sécurité}
+
+S'il existe un ensemble \textit{I} inclus dans \textit{$D_f$} tel que $\forall x \in I, f(x) \in I$ (autrement dit $f(I)\subset I$) alors dès que $a \in I$, la suite\\
+\begin{center}
+\Large{$\displaystyle \lbrace  u_{n0} = a, \forall \geqslant n_0$ $u_{n+1} = f{(u_n)} \rbrace $}.
+\end{center}
+est bien définie. \textit{I}, ensemble \textit{stable} par $f$, est appelé un \textit{ensemble de sécurité} pour cette récurrence.\\
+
+\subsubsection{Démonstration de la convergence}
+
+\begin{center}
+\large{1. Démonstration de la divergence de la série harmonique en utilisant\\
+
+
+$\displaystyle ln(n+1)-ln$ $n \sim \frac{1}{n}$.\\
+
+2. Démonstration de la convergence de $\sum\displaystyle\frac{1}{n^\alpha}$ pour $\alpha > 1$ en utilisant\\
+
+
+$\displaystyle \left(\frac{1}{n^{\alpha -1}}-\frac{1}{(n+1)^\alpha -1}\right) \sim \frac{\alpha -1}{n^{\alpha}}$}
+
+\end{center}
+
+\subsubsection{Déterminant d'une matrice}
+
+Le déterminant d'une matrice d'ordre \textit{n} est de déterminant de ses colonnes dans la base canonique de $M_{n,1}(K)$, autrement dit :\\
+\
+\begin{align}
+det \displaystyle A \overset{def}{=} det_{B_{can}}(C_1,C_2,...,C_n)&= 
+\begin{bmatrix} \displaystyle
+A_{(1,1)} & \dots & A{(1,n)} \\
+\dots & & \dots\\
+A_{(n,1)} & \dots & A{(n,n)}\\
+\end{bmatrix}\nonumber\\
+&=\sum_{\sigma \in S_n}\varepsilon A(\sigma(1),1)....A(\sigma(n),n).
+\end{align}
+
+\`A noter que $det_{\beta}(\beta ')=det(P_{\beta , \beta '})$.
+
+\section{Informatique}
+\subsection{Apprentissage artificiel}
+Le tableau suivant donne les temps d'accès et les capacités typiques$^1$ des unités de mémoire courantes. En  plus, le titre du Table 1 est en anglais.\\
+
+\begin{tabular}{|c|c|c|} 
+   \hline
+    Méthode & \multicolumn{2}{c|}{$\searrow 1024$      $\searrow 2048$} \\
+    \hline
+    SANS ADAPTATION & $80.0\pm 1.7$   $0.00s$ & $80.2\pm 1.9$   $0.00s$ \\
+    \textbf{SA} & $82.5\pm 1.6$   $8.82s$ & $82.9\pm 1.6$  $19.90s$\\
+    \textbf{OT} & $76.5\pm 1.6$  $19.83s$ & $76.0\pm$  $37.57s$\\
+    \textbf{OT2} & $81.0\pm 3.1s$  $17.93s$ & $84.0\pm 2.6$  $35.80s$\\
+    \textbf{OT3} & $86.7\pm 2.0$  $23.74s$ & $88.8\pm 1.5$  $41.46s$\\
+    \hline   
+\end{tabular}\\
+
+TABLE 1 - Mean recognition accuracies in \% , standard deviation and sum of total computanional time (ober the $12$ DA pairs and 10 iterations) in seconds for different adaptation algorithms usingthe CaffeNet features.\\
+
+\small 1. cela n'a rien à voir en fait...
+\subsection{Un programme Java}
+
+Proposez un programme informatique écrit en Java, nommé RANDOM-POINTINCIRCLE, qui génère de manière aléatoires deux coordonnées entières $x$ et $y$ d'un point se trouvant à l'intérieur d'un cercle centré sur le point (0,0) de rayon 10.\\
+
+
+
+import java.lang.Math;\\
+
+public class RandomPointInCicirle $\lbrace$ \\
+
+    public static void main(String[] args) $\lbrace $\\
+       int x, y;\\
+       do $\lbrace $\\
+          // Générer deux points x et y de manière aléatoire\\
+          x = (int)(20.0 * Math.random() - 10.0);\\
+          y = (int)(20.0 * Math.random() - 10.0);\\
+    $\rbrace$ while (x*x + y*y > 10); // continue jusqu(on trouve ce qu'il faut.\\
+    
+    // Affichez (x, y)\\
+    System.out.printin("(" + x + "," + y + ")");\\
+   
+   $\rbrace$\\
+$\rbrace $\\     
+\subsection{Un programme C}
+$-$ Soient les structures suivantes :\\
+
+struct maillon\_ s $\lbrace$\\
+   char * val;\\
+   struct maillon\_ s * suivant;\\
+   struct maillon\_ s * précédent;\\
+$\rbrace$ ;\\   
+typedef struct maillon\_ s maillon\_ t;\\
+
+struc liste\_ s $\lbrace$\\
+  struc maillon\_ s * premier;\\
+  struc maillon\_ s * dernier;\\
+  int taille;\\
+$\rbrace$ ;
+\section{Chimie}
+\subsection{Chimie organique}
+On utilise un briquet pour observer la combustion du butane. Après amorçage à des étincelles, le butane brûle à la sortie d'un briquet au contact du dioxygène.\\
+\begin{flushright}
+$CH_4 + 2O_2 \longrightarrow CO_2 + 2H_2O$        (eq1)\\
+$\displaystyle C_nH_{2n+2}+\frac{3n+1}{2}O_2 \xrightarrow{\triangle G}  nCO_2 + (n+1)H_2O$\\
+$Ag^++Cl^- \longrightarrow \underset{\searrow}AgCl.$   (eq2)
+\end{flushright}
+Ici, seulement les lignes \textit{eq1} et \textit{eq2} sont correctes.
+\subsection{\'Ethylène}
+L'éthylène, ou, selon la nomenclature de l'IUPAC, éthène, est un hydrocarbure insaturé, C'est un gaz incolore, volatil, de densité proche de l'air avec lequel in forme des mélanges explosifs. \`A partir de 425\degree C, il s'enflamme et brûle avec une flamme claire; chaleur de combustion : \textit{47200kJ/kg}.\\
+
+\begin{center}
+$C_2H_4$ = \chemfig{H-C(-[2]H)(-[6]H)-C(-[2]H)(-[6]H)-H}
+\end{center}
+\section{Physique}
+\subsection{\'Equation de Schrödinger}
+
+En mécanique quantique, l'état à l'instant t d'un système est décrit par un élément $|\Psi (t)\rangle |\Psi (t) \rangle$ de l'espace complexe de Hilbert - avec l'utilisation de la notation braket de Paul Dirac. Le carré de $\Psi (t)\rangle |\Psi (t) \rangle$ représente les densités de probabilités de résultats de toutes les mesures possibles d'un système.\\
+
+\begin{center}
+$\displaystyle \frac{\hat{\vec{\mathbf{P}}}^2}{2m}|\Psi (t) \rangle + V(\hat{\vec{\mathbf{r}}},t)|\Psi (t) \rangle = ih\frac{\partial}{\partial t}|\Psi (t) \rangle$
+\end{center}
+où\\
+\begin{center}
+\begin{enumerate}
+\item[1]. $i$ est l'unité imaginaire : $i^2=-1i^2=-1$,\\
+\item[2]. $h$ constance de Dirac : $h=\frac{h}{2\pi}$,\\
+\item[3]. $\displaystyle \hat{H} = \frac{\overset{\overset{\wedge}\rightarrow}P^2}{2m} + V(\overset{\overset{\wedge}\rightarrow}{\textbf{r}},t)$ est l'hamiltonien, dépendant du temps en général, l'observable correspondant à l'énergie totale du système,\\
+\item[4]. $\hat{\vec{\mathbf{P}}},$ est l'observable impulsion,\\
+\item[5].$\hat{\vec{\mathbf{r}}},$ est l'observable position,\\
+\item[6]. $h$ est la constante de Planck, $6,63 \times 10^{-34}J.s.$
+\end{enumerate}
+\end{center}
+\subsection{\'Equation de Wheller-DeWitt}
+
+L'équation de Wheller-DeWitt est une équation de champ nommée d'après ses auteurs John Archibald Wheeler et Bryce De-Witt, Une propriété étonnante de cette équation qui se veut fondamentale dans la description du monde est qu'elle n'a pas recours à une variable de temps.\\
+
+\begin{center}
+$\displaystyle\frac{\delta Z}{\delta N}=\int\frac{\delta I\left[g_{\mu v},\Phi\right]}{\delta N}\vert_{\Sigma}exp(-I\left[g_{\mu v},\Phi\right])\textbf{Dg}\textbf{D}\Phi.$ 
+\end{center}
+\end{document}
